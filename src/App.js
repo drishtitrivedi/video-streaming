@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Switch, withRouter } from "react-router-dom";
+import LoginForm from "./components/loginForm";
+import Videos from "./components/items/videos";
+import Audios from "./components/items/audios";
+import Images from "./components/items/images";
+import Home from "./components/home";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Header from "./components/items/header";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <main className="container">
+        <Header />
+        <Switch>
+          <Route path="/login" component={LoginForm} />
+          <Route path="/videos" component={Videos} />
+          <Route path="/audios" component={Audios} />
+          <Route path="/images" component={Images} />
+          <Route path="/" component={Home} />
+        </Switch>
+      </main>
+    </React.Fragment>
   );
 }
 
-export default App;
+export default withRouter(App);
