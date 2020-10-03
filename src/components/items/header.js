@@ -28,16 +28,15 @@ class Header extends Component {
     }
     return (
       <React.Fragment>
-        <Navbar className="navbar navbar-default" bg="dark" variant="dark">
+        <Navbar bg="dark" variant="dark" expand="lg">
+          <Navbar.Brand href="/">Streaming Live</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Navbar.Brand href="#home">Streaming Live</Navbar.Brand>
             <Nav className="mr-auto">
               <Nav.Link href="/videos">Videos</Nav.Link>
               <Nav.Link href="/audios">Audio</Nav.Link>
               <Nav.Link href="/images">Images</Nav.Link>
             </Nav>
-
             {button}
           </Navbar.Collapse>
         </Navbar>

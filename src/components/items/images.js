@@ -30,6 +30,7 @@ class Images extends Component {
     let filtered_data = {};
 
     // filteration based on user role
+    filtered_data = Data.filter((d) => d.acl === "public-read");
     if (userData === "owner") {
       filtered_data = Data;
     }
@@ -45,8 +46,6 @@ class Images extends Component {
         .filter((d) => d.acl !== "bucket-owner-read")
         .filter((d) => d.acl !== "private")
         .filter((d) => d.acl !== "aws-exec-read");
-    } else {
-      filtered_data = Data.filter((d) => d.acl === "public-read");
     }
 
     return (
@@ -59,7 +58,7 @@ class Images extends Component {
                 <div className="pt-5" key={c.id}>
                   <img
                     className="img-fluid"
-                    alt=""
+                    alt="aaa"
                     src={`https://s3.${this.state.region}.amazonaws.com/${this.state.bucketName}/${c.file_name}`}
                   />
                 </div>

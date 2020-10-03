@@ -56,13 +56,7 @@ class LoginForm extends Component {
 
     return (
       <React.Fragment>
-        <div
-          className="container mt-5"
-          style={{
-            width: 600,
-            height: 400,
-          }}
-        >
+        <div className="container">
           <h3 className="pt-5">Log in</h3>
           <p>
             {this.state.logging === 1 && (

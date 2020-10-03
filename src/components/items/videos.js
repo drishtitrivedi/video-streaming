@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
 import "video-react/dist/video-react.css";
-//import aws from "aws-sdk";
 import { Player } from "video-react";
 
 // Module to stream all videos
@@ -36,6 +34,7 @@ class Videos extends Component {
     let filtered_data = {};
 
     // filteration based on user role
+    filtered_data = Data.filter((d) => d.acl === "public-read");
     if (userData === "owner") {
       filtered_data = Data;
     }
@@ -51,15 +50,12 @@ class Videos extends Component {
         .filter((d) => d.acl !== "bucket-owner-read")
         .filter((d) => d.acl !== "private")
         .filter((d) => d.acl !== "aws-exec-read");
-    } else {
-      filtered_data = Data.filter((d) => d.acl === "public-read");
     }
 
     return (
       <React.Fragment>
         <div className="container">
           <div className="row">
-            <div className="col-sm-2"></div>
             <div className="col-sm-10 pt-2">
               {filtered_data.map((c) => (
                 <div className="pt-5" key={c.id}>

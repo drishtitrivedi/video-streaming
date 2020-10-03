@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+
 import "video-react/dist/video-react.css";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
@@ -34,6 +34,7 @@ class Audios extends Component {
     let filtered_data = {};
 
     // filteration based on user role
+    filtered_data = Data.filter((d) => d.acl === "public-read");
     if (userData === "owner") {
       filtered_data = Data;
     }
@@ -49,8 +50,6 @@ class Audios extends Component {
         .filter((d) => d.acl !== "bucket-owner-read")
         .filter((d) => d.acl !== "private")
         .filter((d) => d.acl !== "aws-exec-read");
-    } else {
-      filtered_data = Data.filter((d) => d.acl === "public-read");
     }
 
     return (
