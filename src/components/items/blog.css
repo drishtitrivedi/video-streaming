@@ -1,0 +1,11 @@
+body {
+  background-image: url("../images/blog-post.jpg") !important;
+}
+
+.container {
+  background-color: white;
+  padding-bottom: 2px;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 14px;
+  opacity: 1;
+}

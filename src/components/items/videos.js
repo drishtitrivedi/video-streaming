@@ -56,7 +56,8 @@ class Videos extends Component {
       <React.Fragment>
         <div className="container">
           <div className="row">
-            <div className="col-sm-10 pt-2">
+            <div className="col-sm-1"></div>
+            <div className="col-sm-10 pt-1 pb-5">
               {filtered_data.map((c) => (
                 <div className="pt-5" key={c.id}>
                   <Player
@@ -69,6 +70,7 @@ class Videos extends Component {
                 </div>
               ))}
             </div>
+            <div className="col-sm-1"></div>
           </div>
         </div>
       </React.Fragment>

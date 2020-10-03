@@ -57,7 +57,7 @@ class Audios extends Component {
         <div className="container">
           <div className="row">
             <div className="col-sm-2"></div>
-            <div className="col-sm-8 pt-2">
+            <div className="col-sm-8 pt-2 pb-5">
               {filtered_data.map((c) => (
                 <div className="pt-5" key={c.id}>
                   <AudioPlayer
